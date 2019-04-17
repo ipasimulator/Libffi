@@ -59,7 +59,10 @@ if (MSVC)
         set(fmasm "/c /Cx /coff /safeseh /Fo")
     endif()
 
-    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} /Oy- /Oi /Gy /Zi /GL /Gd")
+    # [port] CHANGED: Removed `/GL` as that option generates object files in
+    # [port] format not supported by Clang. And we use the output library when
+    # [port] linking with Clang.
+    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} /Oy- /Oi /Gy /Zi /Gd")
     set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} /Oy-")
 
     add_custom_target(preprocess
