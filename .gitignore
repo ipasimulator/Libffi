@@ -6,3 +6,6 @@ build/
 .AppleDouble
 .LSOverride
 ._*
+
+# Git Time Metric
+/.gtm/
