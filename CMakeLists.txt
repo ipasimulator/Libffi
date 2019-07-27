@@ -27,7 +27,8 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG "${CMAKE_BINARY_DIR}/lib")
 set(inc "${CMAKE_SOURCE_DIR}/include")
 set(src "${CMAKE_SOURCE_DIR}/source")
-set(bin "${CMAKE_SOURCE_DIR}/build")
+# [port] CHANGED: `_SOURCE` -> `_BINARY_`. See i30.
+set(bin "${CMAKE_BINARY_DIR}/build")
 
 if (MSVC)
     set(SYMBOL_UNDERSCORE 1)
